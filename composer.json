@@ -9,7 +9,6 @@
         }
     ],
     "require": {
-        "nicolaslopezj/searchable": "^1.13",
-        "illuminate/support": "~8"
+        "nicolaslopezj/searchable": "^1.13"
     }
 }
