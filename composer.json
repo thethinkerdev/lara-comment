@@ -1,0 +1,15 @@
+{
+    "name": "samankhdev/lara-comment",
+    "description": "Comment package for laravel +Searchable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "samankhdev",
+            "email": "samkh.dev@yahoo.com"
+        }
+    ],
+    "require": {
+        "nicolaslopezj/searchable": "^1.13",
+        "Illuminate/Support": "~8"
+    }
+}
