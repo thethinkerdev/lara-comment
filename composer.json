@@ -10,5 +10,17 @@
     ],
     "require": {
         "nicolaslopezj/searchable": "^1.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Samankhdev\\LaraComment":"src/"
+        }
+    },
+    "extra": {
+        "laravel":{
+            "providers":[
+                "samankhdev\\LaraComment\\LaraCommentServiceProvider"
+            ]
+        }
     }
 }
