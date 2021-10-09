@@ -23,7 +23,7 @@
   }
 ```
 
-- for showing childeren of comment do this
+- for showing children of comment do this
 
 ```blade
             @foreach ($comment->answers as $answer)
