@@ -19,7 +19,7 @@
     "extra": {
         "laravel":{
             "providers":[
-                "samankhdev\\LaraComment\\LaraCommentServiceProvider"
+                "Samankhdev\\LaraComment\\LaraCommentServiceProvider"
             ]
         }
     }
