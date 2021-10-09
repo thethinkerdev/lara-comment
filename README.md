@@ -5,6 +5,13 @@
 
 # Usage
 
+- you should run publish command
+
+```bash
+php artisan vendor:publish
+php artisan migrate
+```
+
 - in your model add this method
 
 ```php
@@ -14,7 +21,7 @@
   }
 ```
 
-- for showing those comments are parents do this and also are enable.
+- for showing those comments are parents , do this and also are enable.
 
 ```php
   public function comments()
