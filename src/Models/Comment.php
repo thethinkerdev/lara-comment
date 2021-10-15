@@ -25,9 +25,12 @@ class Comment extends Model
     {
         return $this->hasOne(Comment::class, 'answer_id', 'id');
     }
-    public function answers()
+    public function answers($all = false)
     {
-        return $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0)->where("status", 1);
+        return $all ?
+            $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0)
+            :
+            $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0)->where("status", 1);
     }
     public function commentable()
     {
