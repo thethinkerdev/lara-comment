@@ -9,7 +9,6 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Comment extends Model
 {
-    public $showAll=false;
     use HasFactory, SearchableTrait;
     protected $searchable = [
         'columns' => [
@@ -17,21 +16,25 @@ class Comment extends Model
         ]
     ];
     protected $guarded = ['id'];
-
+    /* Who is creator of this Comment ?? */
     public function user()
     {
         return $this->belongsTo(User::class, "user_id");
     }
+    /* Get parent of this comment */
     public function parent()
     {
         return $this->hasOne(Comment::class, 'answer_id', 'id');
     }
+    /* Get all comments */
+    public function allAnswers()
+    {
+        return $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0);
+    }
+    /* Get those comments are Active */
     public function answers()
     {
-        return $this->showAll ?
-            $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0)
-            :
-            $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0)->where("status", 1);
+        return $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0)->where("status", 1);
     }
     public function commentable()
     {
