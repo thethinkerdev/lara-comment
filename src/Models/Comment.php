@@ -21,6 +21,10 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class, "user_id");
     }
+    public function parent()
+    {
+        return $this->hasOne(Comment::class, 'answer_id', 'id');
+    }
     public function answers()
     {
         return $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0)->where("status", 1);
