@@ -9,6 +9,7 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Comment extends Model
 {
+    public $showAll=false;
     use HasFactory, SearchableTrait;
     protected $searchable = [
         'columns' => [
@@ -25,9 +26,9 @@ class Comment extends Model
     {
         return $this->hasOne(Comment::class, 'answer_id', 'id');
     }
-    public function answers($all = false)
+    public function answers()
     {
-        return $all ?
+        return $this->showAll ?
             $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0)
             :
             $this->hasMany(Comment::class, "answer_id", 'id')->where('answer_id', "!=", 0)->where("status", 1);
