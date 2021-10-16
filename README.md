@@ -30,7 +30,7 @@ php artisan migrate
   }
 ```
 
-- for showing children of comment do this
+- for showing children of comment do this if status is true
 
 ```blade
             @foreach ($comment->answers as $answer)
@@ -38,4 +38,18 @@ php artisan migrate
             @endforeach
 ```
 
+- Showing all Answers
+
+```blade
+        @foreach ($comment->allAnswers as $answer)
+            {{-- ... --}}
+        @endforeach
+```
+
+
+- Show the parent of Comment use method
+
+```php
+$comment->parent;
+```
 
