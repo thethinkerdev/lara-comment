@@ -47,7 +47,7 @@ php artisan migrate
 ```
 
 
-- Show the parent of Comment use method
+- Show the parent of Comment
 
 ```php
 $comment->parent;
