@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use Carbon\Carbon;
 
 class Comment extends Model
 {
@@ -39,5 +40,9 @@ class Comment extends Model
     public function commentable()
     {
         return $this->morphTo();
+    }
+    public function ago($item)
+    {
+      return Carbon::parse($item)->diffForHumans();
     }
 }

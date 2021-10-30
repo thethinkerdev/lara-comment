@@ -1,7 +1,12 @@
 # Intro
 
-- this package helps you to add `comment system` for your product,article,...
+>this package helps you to add `comment system` for your product,article,...
 
+# Installation
+
+```bash
+composer require samankhdev/lara-comment
+```
 
 # Usage
 
@@ -53,3 +58,7 @@ php artisan migrate
 $comment->parent;
 ```
 
+- Show past time since comment was made.
+```php
+<span>{{ $comment->ago }}</spaan>
+```
